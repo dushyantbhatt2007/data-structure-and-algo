@@ -1,1 +1,1 @@
-# DS-AND-ALGO
+# data structure and algorithms
