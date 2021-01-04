@@ -130,6 +130,24 @@ class DoublyLinkedList:
 
         print(dlistr)
 
+    def print_backward(self):
+        if self.head is None:
+            print("List is empty")
+            return
+
+        itr = self.head
+
+        while itr.next:
+            itr = itr.next
+
+        lstr = ''
+
+        while itr:
+            lstr += '<-->' + itr.data
+            itr = itr.prev
+
+        print(lstr)
+
 
 if __name__ == '__main__':
     dli = DoublyLinkedList()
@@ -158,3 +176,4 @@ if __name__ == '__main__':
     dli.remove_by_value("23")
     dli.print()
     print("Length of list is: ", dli.get_length())
+    dli.print_backward()
