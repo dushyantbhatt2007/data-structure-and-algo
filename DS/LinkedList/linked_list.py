@@ -21,7 +21,7 @@ class LinkedList:
         while itr.next:
             itr = itr.next
 
-        itr.next=Node(data=data, next=None)
+        itr.next = Node(data=data, next=None)
 
     def insert_values(self, data_list):
         self.head = None
@@ -41,7 +41,7 @@ class LinkedList:
             raise ValueError("Invalid index")
 
         if index == 0:
-            self.head = None
+            self.head = self.head.next
             return
 
         count = 0
@@ -95,6 +95,10 @@ class LinkedList:
     def remove_by_value(self, data):
         found = False
 
+        if self.head.data == data:
+            self.head = self.head.next
+            found = True
+
         itr = self.head
         while itr:
             if itr.next is not None and itr.next.data == data:
@@ -133,8 +137,7 @@ if __name__ == '__main__':
     li.print()
     li.insert_at_begining(11)
     li.print()
-    li.insert_values(data_list=["1","5","3","8"])
-    print("Length of linked list is: ", li.get_length())
+    li.insert_values(data_list=["1", "5", "3", "8"])
     li.print()
     li.remove_at(3)
     print("Length of linked list is: ", li.get_length())
@@ -146,4 +149,7 @@ if __name__ == '__main__':
     li.insert_after_value('5454', '55')
     li.remove_by_value("3")
     li.print()
-    li.remove_by_value("3")
+    li.remove_by_value("10")
+    li.print()
+    li.remove_by_value("1")
+    li.print()
