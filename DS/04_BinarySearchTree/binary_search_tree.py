@@ -150,7 +150,8 @@ def build_tree(elements):
 
 
 if __name__ == "__main__":
-    numbers = [17, 4, 1, 20, 9, 23, 18, 34]
+    #numbers = [17, 4, 1, 20, 9, 23, 18, 34]
+    numbers = [10,5,15,3,7,18]
     numbers_tree = build_tree(elements=numbers)
     print(numbers_tree.in_order_traversal())
     print(numbers_tree.search(20))
