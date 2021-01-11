@@ -1,6 +1,6 @@
 from queue import Queue
 
-from DS.Graph.graph import *
+from .graph import *
 
 
 def breadth_first(graph, start=0):
